@@ -1,0 +1,13 @@
+[Unit]
+Description=Reporter - OpenSfera Service
+After=mongodb.service
+
+[Service]
+Type=idle
+User=root
+WorkingDirectory=/usr/local/sfera/reporter
+ExecStart=/usr/bin/python3 /usr/local/sfera/reporter/reporter.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
